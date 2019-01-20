@@ -1,0 +1,19 @@
+image: registry.gitlab.com/phenom.team/phenom_website/safu2019_client
+
+stages:
+  - deploy
+
+deploy_stage:
+  stage: deploy
+
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p /root/.ssh && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - export ANSIBLE_CONFIG=/builds/phenom.team/safu2019_client/ansible/ansible.cfg
+
+  script:
+    - ansible-playbook ./ansible/safu-client-stage.yml -i ./ansible/hosts
+
+  only:
+    - stage
