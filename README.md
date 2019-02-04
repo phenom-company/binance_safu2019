@@ -4,6 +4,8 @@ Binance SAFU Hackathon 2019
 
 https://safu.phenom.team
 
+https://arbitration.phenom.team
+
 ## What is Spider?
 
 Spider is a Сrypto scoring platform that allows checking if crypto wallet has ever been involved in transfers of illegally obtained funds and helps businesses to meet AML regulation requirements.
@@ -23,8 +25,8 @@ Score evaluation is based on a database of approved cases of loss.
 
   * Top up account balance
   * Request wallet scoring
-  * From the web interface
-  * Through the API
+      * From the web interface
+      * Through the API
   * Request transaction flow
 
 ### **2. Contributor**
